@@ -1,7 +1,13 @@
 import React from "react";
 
 function SideNav() {
-  return <div>SideNav</div>;
+  return (
+    <div>
+      <div>
+        <h1>Logo</h1>
+      </div>
+    </div>
+  );
 }
 
 export default SideNav;
