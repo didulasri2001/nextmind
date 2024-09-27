@@ -5,6 +5,7 @@ function SideNav() {
     <div>
       <div>
         <h1>Logo</h1>
+        <h1>Dashboard</h1>
       </div>
     </div>
   );
