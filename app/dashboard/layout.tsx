@@ -8,10 +8,10 @@ function layout({
 }>) {
   return (
     <div>
-      <div className="w-64 fixed">
+      <div className="md:w-64 hidden md:block fixed">
         <SideNav></SideNav>
       </div>
-      <div className="ml-64">{children}</div>
+      <div className="md:ml-64">{children}</div>
     </div>
   );
 }
