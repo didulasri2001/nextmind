@@ -1,7 +1,7 @@
 export default [
   {
     name: "Blog Title",
-    desc: "An AI tool that generate blog title depends on yout blog information",
+    desc: "An AI tool that generate blog title depends on your blog information.",
     category: "Blog",
     icon: "https://cdn-icons-png.flaticon.com/128/4186/4186534.png",
     aiPrompt:
