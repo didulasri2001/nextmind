@@ -1,5 +1,5 @@
 import Templates from "@/app/(data)/Templates";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export interface TemplateListSection {
   name: string;
@@ -17,10 +17,21 @@ export interface FORM {
   required?: boolean;
 }
 
-function TemplateListSection() {
+function TemplateListSection({ userSearchInput }: any) {
+  const [templateList, setTemplateList] = useState(Templates);
+  useEffect(() => {
+    if (userSearchInput) {
+      const filterData = Templates.filter((item) =>
+        item.name.toLowerCase().includes(userSearchInput.toLowerCase())
+      );
+      setTemplateList(filterData);
+    } else {
+      setTemplateList(Templates);
+    }
+  }, [userSearchInput]);
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-5 ml-2">
-      {Templates.map((template, index) => (
+      {templateList.map((template, index) => (
         <div
           key={index}
           className="p-3 bg-white rounded-lg shadow-md mb-3 flex flex-col gap-3 cursor-pointer hover:scale-105 transition-all"
