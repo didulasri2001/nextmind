@@ -26,16 +26,16 @@ function CreateNewContent(props: PROPS) {
           <ArrowLeft />
           Back
         </Button>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-5">
-          <FormSection
-            selectedTemplate={selectedTemplate}
-            userFormInput={(v: any) => GenerateAIContent(v)}
-          />
-          <div className="col-span-2">
-            <OutputSection />
-          </div>
-        </div>
       </Link>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 p-5">
+        <FormSection
+          selectedTemplate={selectedTemplate}
+          userFormInput={(v: any) => GenerateAIContent(v)}
+        />
+        <div className="col-span-2">
+          <OutputSection />
+        </div>
+      </div>
     </div>
   );
 }
