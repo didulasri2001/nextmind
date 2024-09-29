@@ -2,12 +2,14 @@
 import React, { useState } from "react";
 import { TemplateListSection } from "../../_components/TemplateListSection";
 import { Button } from "@/components/ui/button";
+import { Loader2Icon } from "lucide-react";
 interface PROPS {
   selectedTemplate?: TemplateListSection;
   userFormInput: any;
+  loading: boolean;
 }
 
-function FormSection({ selectedTemplate, userFormInput }: PROPS) {
+function FormSection({ selectedTemplate, userFormInput, loading }: PROPS) {
   const [formData, setFormData] = useState<any>();
   const handleInputChange = (event: any) => {
     const { name, value } = event.target;
@@ -50,7 +52,9 @@ function FormSection({ selectedTemplate, userFormInput }: PROPS) {
         <Button
           type="submit"
           className="bg-primary text-white p-2 mt-5 rounded-md w-full"
+          disabled={loading}
         >
+          {loading && <Loader2Icon className="animate-spin" />}
           Generate Content
         </Button>
       </form>
